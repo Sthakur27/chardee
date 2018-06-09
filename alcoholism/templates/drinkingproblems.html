@@ -1,0 +1,35 @@
+{% extends "bootstrap/base.html" %}
+{% block title %}Crippling Alcoholism{% endblock %}
+{% block styles %}
+<style>
+input.MyButton {
+width: 300px;
+padding: 20px;
+cursor: pointer;
+font-weight: bold;
+font-size: 150%;
+background: #3366cc;
+color: #fff;
+border: 1px solid #3366cc;
+border-radius: 10px;
+}
+input.MyButton:hover {
+color: #ffff00;
+background: #000;
+border: 1px solid #fff;
+}
+</style>
+{% endblock %}
+{% block content %}
+<br>
+<h1>SidFlesh ThakurHood: The Game of Games</h1>
+<br>
+<form>
+<input class="MyButton" type="button" value="Level 1 Card" onclick="window.location.href='/draw/1'" />
+<input class="MyButton" type="button" value="Level 2 Card" onclick="window.location.href='/draw/2'" />
+<input class="MyButton" type="button" value="Level 3 Card" onclick="window.location.href='/draw/3'" />
+</form>
+</br>
+<h2>{{card}}</h2>
+{% endblock %}
+	  
