@@ -2,7 +2,7 @@ from flask import render_template
 from alcoholism import app
 from alcoholism.chardee_macdennis import *
 
-
+deck = Deck()
 
 
 @app.route('/')
@@ -11,5 +11,12 @@ def start():
 
 @app.route('/draw/<int:level>')
 def draw_lvl(level):
-    new_card=draw(level)
+    new_card=deck.draw(level)
     return render_template("drinkingproblems.html", card=new_card)
+
+@app.route('/reset')
+def reset():
+    deck.loadData()
+    return render_template("drinkingproblems.html", card="Deck reloaded!")
+
+    
